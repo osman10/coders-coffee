@@ -1,9 +1,9 @@
-import React from 'react';
+import Hero from './components/Hero';
 
 const App = () => {
   return (
-    <div className="bg-red-500">
-      Helolow
+    <div className="overflow-x-hidden">
+      <Hero />
     </div>
   );
 };
