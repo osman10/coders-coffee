@@ -1,5 +1,6 @@
 
 import BGSLATE from "../assets/bg-slate.png";
+import CoffeeMain from "../assets/coffee-cup.png";
 
 const bgImage ={
     backgroundImage: `url(${BGSLATE})`,
@@ -29,8 +30,11 @@ const Hero = () => {
                             </div>
 
                         </div>
+
                         {/* Hero Image section */}
-                        <div></div>
+                        <div className="relative">
+                            <img src={CoffeeMain} alt="Coffee" className="relative z-40 h-[400px] md:h-[700px] img-shadow" />
+                        </div>
                         {/* third div section */}
                         <div></div>
                     </div>

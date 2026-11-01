@@ -8,6 +8,15 @@
   --color-light-gray: #272c35;
 }
 
+@layer utilities {
+  .img-shadow{
+    filter: drop-shadow(40px 50px 25px #0f1115);
+  }
+  .img-shasow2{
+    filter: drop-shadow(10px 30px 15px #30307a);
+  }
+}
+
 /* Container customizations */
 @utility container {
   margin-inline: auto;
