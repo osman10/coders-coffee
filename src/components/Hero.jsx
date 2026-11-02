@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import BGSLATE from "../assets/bg-slate.png";
 import CoffeeMain from "../assets/coffee-cup.png";
 import Navbar from "./Navbar";
@@ -14,12 +15,14 @@ const bgImage = {
 }
 
 const Hero = () => {
+    const [sidebar, setSidebar] = useState(false);
+
     return (
         <main style={bgImage}>
             <section className="relative min-h-[750] w-full">
                 <div className="container">
                     {/* Navbar section */}
-                    <Navbar />
+                    <Navbar sidebar={sidebar} setSidebar={setSidebar} />
 
                     {/* Hero Section */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[850px]">
@@ -115,8 +118,13 @@ const Hero = () => {
                         </motion.div>
                     </div>
                 </div>
+
                 {/* sidebar menu section */}
-                <div className="absolute top-0 right-0 w-[140px] h-full bg-gradient-to-b from-primary/80 to-primary/70 backdrio-blur-sm z-10">
+                <motion.div
+                    initial={{x: "100%"}}
+                    whileInView={{x:0}}
+
+                    className={`absolute top-0 ${sidebar ? 'right-0' : '-right-[140px]'} w-[140px] h-full bg-gradient-to-b from-primary/80 to-primary/70 backdrio-blur-sm z-10`}>
                     <div className="w-full h-full flex justify-center items-center">
                         <div className="flex flex-col justify-center items-center gap-6 text-white">
                             {/* line */}
@@ -131,7 +139,7 @@ const Hero = () => {
                             <div className="w-[1px] h-[70px] bg-white"></div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </section>
         </main>
     );
